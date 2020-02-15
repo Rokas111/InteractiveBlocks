@@ -1,0 +1,8 @@
+name: InteractiveBlocks
+main: me.Rokaz.InteractiveBlocks.core.InteractiveBlocks
+version: 1.0
+author: Xocky
+commands:
+  iblocks:
+    description: The main command of InteractiveBlocks.
+    usages: /iblocks
