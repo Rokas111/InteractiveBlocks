@@ -4,6 +4,7 @@ import me.Rokaz.InteractiveBlocks.core.blocks.BlockManager;
 import me.Rokaz.InteractiveBlocks.core.cmd.CommandManager;
 import me.Rokaz.InteractiveBlocks.core.cmd.ICommand;
 import me.Rokaz.InteractiveBlocks.core.config.ConfigManager;
+import metrics.Metrics;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -26,6 +27,7 @@ public class InteractiveBlocks extends JavaPlugin {
         cm = new ConfigManager(this);
         cc = new CommandManager(this);
         bm = new BlockManager(this);
+        Metrics m = new Metrics(this,6516);
         bm.initialize();
     }
     @Override
