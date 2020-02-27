@@ -41,7 +41,7 @@ public class BlockConfig extends Config {
         save();
     }
     public void activateBlock(Player p,Block b) {
-        getYaml().getStringList(b.getX()+";" + b.getY() + ";" + b.getZ()).forEach(command -> Bukkit.dispatchCommand(p,command.contains("%player%")?command.replaceAll("%player%",p.getName()):command));
+        getYaml().getStringList(b.getX()+";" + b.getY() + ";" + b.getZ()).forEach(command -> Bukkit.dispatchCommand(Bukkit.getConsoleSender(),command.contains("%player%")?command.replaceAll("%player%",p.getName()):command));
     }
 
 

@@ -1,6 +1,7 @@
 package me.Rokaz.InteractiveBlocks.core.blocks.checkers;
 
 import me.Rokaz.InteractiveBlocks.core.InteractiveBlocks;
+import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;
@@ -22,7 +23,7 @@ public class BlockChecker implements Listener {
     public void checkblock(PlayerMoveEvent e) {
         Player p = e.getPlayer();
         Block b = p.getLocation().getBlock().getRelative(BlockFace.DOWN);
-        if ( b == null || (!previous_blocks.isEmpty()&& previous_blocks.get(p).equals(b))) {return;}
+        if ( b == null || b.getType() == Material.AIR || (!previous_blocks.isEmpty()&& previous_blocks.containsKey(p) && previous_blocks.get(p).equals(b))) {return;}
         if (InteractiveBlocks.bm.getBlockConfig().containsBlock(b)) {
             InteractiveBlocks.bm.getBlockConfig().activateBlock(p,b);
         }
