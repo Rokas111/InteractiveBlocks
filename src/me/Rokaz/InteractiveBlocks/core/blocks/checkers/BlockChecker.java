@@ -22,7 +22,7 @@ public class BlockChecker implements Listener {
     public void checkblock(PlayerMoveEvent e) {
         Player p = e.getPlayer();
         Block b = p.getLocation().getBlock().getRelative(BlockFace.DOWN);
-        if (!previous_blocks.isEmpty()&& previous_blocks.get(p).equals(b)) {return;}
+        if ( b == null || (!previous_blocks.isEmpty()&& previous_blocks.get(p).equals(b))) {return;}
         if (InteractiveBlocks.bm.getBlockConfig().containsBlock(b)) {
             InteractiveBlocks.bm.getBlockConfig().activateBlock(p,b);
         }

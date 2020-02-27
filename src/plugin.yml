@@ -1,6 +1,6 @@
 name: InteractiveBlocks
 main: me.Rokaz.InteractiveBlocks.core.InteractiveBlocks
-version: 1.0
+version: 1.1.2
 author: Xocky
 commands:
   iblocks:
